@@ -1,0 +1,22 @@
+<div class="container text-center">
+  <h1 class="pt-5"><b><i>Loquela</i></b></h1>
+  <form class="signup pt-5" onsubmit="" action="/login" method="post">
+    <h5 class="no-pad">Username:</h5>
+    <div class="row justify-content-center">
+      <input type="text" name="username" required/>
+    </div>
+    <p style="color: red;">{{invalidLogin}}</p>
+    <h5 class="no-pad">Password:</h5>
+    <div class="row justify-content-center">
+      <input type="password" name="password" id="pass" required/>
+    </div>
+    <br>
+    <input type="submit" class="btn btn-primary" name="submit" value="Login"/>
+  </form>
+  <br><br>
+  <p>Create a New Account?</p>
+  <form action="/signup" method="get">
+    <input type="submit" class="btn btn-primary" name="signup" value="Sign Up"/>
+  </form>
+</div>
+</form>

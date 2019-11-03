@@ -1,0 +1,73 @@
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <img class="text-center" src={{imageUrl}} alt="Avatar" width="12%">
+    </div>
+    <form method="post" action="/profile/edit">
+        <div class="form-group row justify-content-center pt-5">
+            <label for="username" class="col-2 col-form-label">Username</label>
+            <div class="col-4">
+                <input type="text" class="form-control" id="inputUsername" name="username" value={{username}}>
+            </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <label for="language" class="col-2 col-form-label">Language</label>
+            <input type="hidden" id="language" value={{language}}>
+            <div class="col-4 dropdown">
+                <select class="form-control" name="language">
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                    <option value="japanese">Japanese</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <label for="difficulty" class="col-2 col-form-label">Difficulty</label>
+            <input type="hidden" id="difficulty" value={{difficulty}}>
+            <div class="col-4 dropdown">
+                <select class="form-control" name="difficulty">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <label for="topic" class="col-2 col-form-label">Topic</label>
+            <input type="hidden" id="topic" value={{topic}}>
+            <div class="col-4 dropdown">
+                <select class="form-control" name="topic">
+                    <option value="art">Art</option>
+                    <option value="music">Music</option>
+                    <option value="history">History</option>
+                    <option value="common phrases">Common Phrases</option>
+                </select>
+            </div>
+        </div>
+        <div class="pt-3 text-center"> 
+            <button type="submit" class="btn btn-primary justify-content-center">Save Changes</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Hack to make edit form show the previously selected entries
+    // This could be improved upon...
+    window.onload = function() {
+        var language = document.getElementById('language').value.toLowerCase();
+        var difficulty = document.getElementById('difficulty').value.toLowerCase();
+        var topic = document.getElementById('topic').value.toLowerCase();
+
+        $('[name=language] option').filter(function(index) {
+            return ($('[name=language] option')[index].value == language);
+        }).prop('selected', true);
+
+        $('[name=difficulty] option').filter(function(index) {
+            return ($('[name=difficulty] option')[index].value == difficulty);
+        }).prop('selected', true);
+
+        $('[name=topic] option').filter(function(index) {
+            return ($('[name=topic] option')[index].value == topic);
+        }).prop('selected', true);
+    };
+</script>
