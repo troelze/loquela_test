@@ -10,7 +10,7 @@ const session = require('express-session');
 app.use(session({secret:'SuperSecretRandomPassword', resave: true, saveUninitialized: true}));
 app.use(body.urlencoded({extended: false}));
 app.use(body.json());
-app.use(express.static(__dirname + '/client/public');
+app.use(express.static(__dirname + '/client/public'));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
