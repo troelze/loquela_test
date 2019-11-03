@@ -1,4 +1,4 @@
-var db = require('../db/queries');
+var db = require(__dirname + '/db/queries');
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);

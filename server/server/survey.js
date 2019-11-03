@@ -2,7 +2,7 @@ module.exports = function(){
   var express = require('express');
   var router = express.Router();
   var helpers = require('./helpers');
-  var db = require('../db/queries.js');
+  var db = require(__dirname + '/db/queries.js');
   const session = require('express-session');
 
   router.get('/', function(req, res){

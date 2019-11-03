@@ -1,7 +1,7 @@
 module.exports = function() {
     var express = require('express');
     var router = express.Router();
-    var db = require('../db/queries');
+    var db = require(__dirname + '/db/queries');
     var helpers = require('./helpers');
     const session = require('express-session');
 
