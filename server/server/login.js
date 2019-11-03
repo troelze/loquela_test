@@ -9,7 +9,7 @@ module.exports = function(){
 
   router.get('/', function(req, res){
     if(helpers.notLoggedIn(req)) {
-      res.render('login');
+      res.render('login.handlebars');
     } else {
       var context = {};
       context.username = req.session.user.username;
