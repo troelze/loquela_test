@@ -10,13 +10,13 @@ const session = require('express-session');
 app.use(session({secret:'SuperSecretRandomPassword', resave: true, saveUninitialized: true}));
 app.use(body.urlencoded({extended: false}));
 app.use(body.json());
-app.use(express.static('../../client/public'));
+app.use(express.static(__dirname + '/client/public');
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
 
-app.set('views','../../client/views');
+app.set('views', __dirname + '/client/views');
 app.set('port', PORT);
 
 // Use homepage.js to route as home page
