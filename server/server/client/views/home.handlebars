@@ -1,0 +1,97 @@
+<div class="container ">
+    <h1 class="text-center pt-5">Loquela</h1>
+    
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/prompts">Prompts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Results</a>
+        </li> 
+        <li class="nav-item">
+            <a class="nav-link" href="/users">Users</a>
+        </li> 
+        
+    
+    </ul>
+  </div>
+
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{oneUser}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/profile">Settings</a>
+                <a class="dropdown-item" href="/login">Log Out</a>
+            </div>
+        </li>
+            
+        </ul>
+    </div>
+
+</nav>
+
+    {{!-- <script>
+        var recordedChunks = [];
+
+        function handleDataAvailable(event) {
+            console.log("data-available");
+            if (event.data.size > 0) {
+                recordedChunks.push(event.data);
+                console.log(recordedChunks);
+                download();
+            } else {
+            //
+            }
+        }
+
+        function download() {
+            var blob = new Blob(recordedChunks, {
+                type: "audio/wav"
+            });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            document.body.appendChild(a);
+            a.style = "display: none";
+            a.href = url;
+            a.download = "test.wav";
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        window.onload = async () => { 
+            const constraints = {
+                audio: true
+            }
+            try {
+                stream = await navigator.mediaDevices.getUserMedia(constraints);
+                /* use the stream */
+                console.log(stream.getAudioTracks())
+
+
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = handleDataAvailable;
+                mediaRecorder.start(1000);
+
+                // demo: to download after 9sec
+                setTimeout(event => {
+                    console.log("stopping");
+                    mediaRecorder.stop();
+                }, 9000);
+
+            } catch(err) {
+            /* handle the error */
+                console.log(err)
+            }
+        }
+    </script> --}}
+</div>
